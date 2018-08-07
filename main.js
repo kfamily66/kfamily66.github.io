@@ -3,13 +3,13 @@ var uAgent = window.navigator.userAgent || "";
 
 function detectCountry() {
   var xmlhttp = new XMLHttpRequest();
-  var url = "http://ip-api.com/json";
+  var url = "https://api.ipdata.co/country_name?api-key=7dd4ea9ccf3a538c5eb332af6719df46c848063ed6630c4b9d7f87cc";
   var country;
   xmlhttp.open("GET", url, true);
   xmlhttp.send();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      country = JSON.parse(this.responseText).country;
+      country = this.responseText;
       insertResult(country);
     }
   };
