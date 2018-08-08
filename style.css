@@ -1,0 +1,258 @@
+html {
+  font-family: Arial;
+  font-size: 16px;
+  color: #333333;
+  box-sizing: border-box;
+  padding: 5em;
+}
+.content-wrapper {
+  transition: all 0.3s;
+}
+.blurred {
+  filter: blur(3px);
+  transition: all 0.3s;
+}
+.detected {
+  max-width: 768px;
+}
+.detected h2,
+.modal-control h2 {
+  font-family: "Raleway";
+  text-align: left;
+  font-size: 2em;
+  font-weight: 400;
+  color: #333333;
+}
+.detected ul {
+  list-style: none;
+  font-family: "Raleway";
+  font-size: 1.2em;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0;
+}
+.modal__content {
+  height: 40%;
+  width: 30%;
+  background: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: scale(0.7);
+  padding: 1em;
+}
+.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  background: rgba(51, 51, 51, 0.5);
+  opacity: 1;
+  transition: all 0.3s;
+}
+.open .modal__content {
+  transform: scale(1);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.column {
+  width: 50%;
+  height: 100%;
+}
+.column__top {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.column__bottom {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.column__bottom p {
+  width: 80%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5em;
+}
+.logo {
+  width: 65%;
+  height: auto;
+  min-height: 1px;
+  margin-top: 1em;
+}
+.fa-star,
+.fa-star-half-alt {
+  color: rgb(253, 217, 11);
+  font-size: 1.4em;
+}
+.btn {
+  padding: 1em;
+  width: 80%;
+  background: transparent;
+  border: 0;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.btn:hover {
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+.btn--primary {
+  color: white;
+  background: #ff9346;
+  border: 1px solid #ff9346;
+  margin-bottom: 0.5em;
+}
+.btn--primary:hover {
+  background: #fa7312;
+}
+.btn--secondary {
+  background: white;
+  color: #ff852d;
+  border: 1px solid #ff9346;
+  margin-bottom: 0.5em;
+}
+.btn--secondary:hover {
+  background: #ffebde;
+}
+.btn--close {
+  position: absolute;
+  line-height: 20px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  top: 12px;
+  right: 12px;
+  font-size: 32px;
+  border: 0;
+  background: transparent;
+  color: rgb(173, 173, 173);
+}
+.btn--close:hover {
+  cursor: pointer;
+}
+
+.btn--small {
+  width: auto;
+}
+.column__top h2 {
+  font-weight: 400;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 12px;
+}
+.ratings {
+  margin-top: 1em;
+}
+.ratings,
+.ratings p {
+  text-align: center;
+}
+.ratings p {
+  font-size: 0.8em;
+  color: #333333;
+  margin: 5px;
+}
+@media (min-width: 1919px) {
+  .column__top h2 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 1440px) {
+  .modal__content {
+    width: 40%;
+    height: 60%;
+    max-height: 350px;
+  }
+}
+@media (max-width: 1024px) {
+  .modal__content {
+    width: 50%;
+    height: 40%;
+  }
+  .btn {
+    padding: 0.75em;
+  }
+  .fas {
+    font-size: 0.8em;
+    margin: 0;
+  }
+  .column__bottom p {
+    line-height: 1em;
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 768px) {
+  .modal__content {
+    width: 60%;
+    height: 40%;
+    max-height: 250px;
+  }
+  .column__bottom p {
+    line-height: 1em;
+    font-size: 0.9em;
+  }
+  .fas {
+    font-size: 0.8em;
+    margin: 0;
+  }
+  .column__top h2 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+  .btn {
+    padding: 0.5em;
+  }
+  .logo {
+    width: 35%;
+  }
+}
+@media (max-width: 425px) {
+  .open .modal__content {
+    flex-direction: column;
+  }
+  .modal__content {
+    height: 45%;
+  }
+  .column__top,
+  .column__bottom {
+    height: 50%;
+  }
+  .logo {
+    width: 15%;
+  }
+  .column {
+    width: 100%;
+  }
+  .modal__content > div:first-of-type {
+    height: 20%;
+  }
+  .modal__content > div:nth-of-type(2) {
+    height: 80%;
+  }
+  .column__bottom p {
+    display: none;
+  }
+  .column__top h2,
+  .column__top .ratings {
+    margin-top: 0;
+  }
+}

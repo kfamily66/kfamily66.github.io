@@ -62,7 +62,7 @@ function searchElem(obj) {
 }
 
 function insertResult(result) {
-  html.innerHTML += "<li>" + result + "</li>";
+  html.innerHTML += "<li>" + "✔ " + result + "</li>";
 }
 
 detectCountry();
